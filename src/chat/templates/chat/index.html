@@ -8,5 +8,22 @@
   ルーム名入力<br />
   <input id="room-name-input" type="text" size=100><br />
   <input id="room-name-submit" type="button" value="入力"><br />
+
+  <script>
+    // デフォルトで入力を開始できる状態になる
+    document.querySelector('#room-name-input').focus();
+    // 入力ボタンを押す以外にもフォームにてEnterをすれば入力ボタンを押したのと同義になる
+    document.querySelector('#room-name-input').onkeyup = function(e) {
+      if (e.keyCode === 13) {
+        document.querySelector('#room-name-submit').click();
+      }
+    } ;
+
+    // 入力が押下されたらURLを自動的に受け取った名前で更新する
+    document.querySelector('#room-name-submit').onclick = function(e) {
+      let roomName = document.querySelector('#room-name-input').value;
+      window.location.pathname = '/chat/' + roomName + '/'
+    }
+  </script>
 </body>
 </html>

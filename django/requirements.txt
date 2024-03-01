@@ -7,3 +7,6 @@ django-environ
 
 daphne # websocketプロトコル対応のASGIサーバー
 channels # Djangoではサポートされていない非同期通信をASGIベースで実装できるライブラリ
+
+# 複数consumer間でチャットをする場合
+channels-redis
